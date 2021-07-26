@@ -21,6 +21,7 @@ class GNav extends StatefulWidget {
     this.hoverColor = Colors.transparent,
     this.backgroundColor = Colors.transparent,
     this.tabBackgroundColor = Colors.transparent,
+    this.tabInactiveBackgroundColor,
     this.tabBorderRadius = 100.0,
     this.iconSize,
     this.textStyle,
@@ -47,6 +48,7 @@ class GNav extends StatefulWidget {
   final Color? activeColor;
   final Color backgroundColor;
   final Color tabBackgroundColor;
+  final Color? tabInactiveBackgroundColor;
   final Color? color;
   final Color rippleColor;
   final Color hoverColor;
@@ -126,6 +128,8 @@ class _GNavState extends State<GNav> {
                           t.backgroundGradient ?? widget.tabBackgroundGradient,
                       backgroundColor:
                           t.backgroundColor ?? widget.tabBackgroundColor,
+                      inactiveBackgroundColor:
+                          t.inactiveBackgroundColor ?? widget.tabInactiveBackgroundColor,
                       duration: widget.duration,
                       onPressed: () {
                         if (!clickable) return;

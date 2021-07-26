@@ -14,6 +14,7 @@ class Button extends StatefulWidget {
     this.text,
     this.gap,
     this.color,
+    this.inactiveColor,
     this.rippleColor,
     this.hoverColor,
     required this.onPressed,
@@ -39,6 +40,7 @@ class Button extends StatefulWidget {
   final Color? iconActiveColor;
   final Color? iconColor;
   final Color? color;
+  final Color? inactiveColor;
   final Color? rippleColor;
   final Color? hoverColor;
   final double? gap;
@@ -124,7 +126,7 @@ class _ButtonState extends State<Button> with TickerProviderStateMixin {
                   : widget.border,
               gradient: widget.gradient,
               color: _expanded
-                  ? widget.color!.withOpacity(0)
+                  ? widget.inactiveColor ?? widget.color!.withOpacity(0)
                   : widget.debug!
                       ? Colors.red
                       : widget.gradient != null
